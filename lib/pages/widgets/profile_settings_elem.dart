@@ -10,6 +10,9 @@ class ProfileSettingsElem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      onTap: (){
+        Navigator.pushNamed(context, e.id!);
+      },
       leading: Container(
         height: 50,
         width: 50,
@@ -20,15 +23,11 @@ class ProfileSettingsElem extends StatelessWidget {
         child: e.icon,
       ),
       title: Text(e.text),
-      trailing: IconButton(
-        onPressed: () {
-          Navigator.pushNamed(context, e.id!);
-        },
-        icon: const Icon(
+      trailing:
+        const Icon(
           Icons.arrow_forward_ios_outlined,
           size: 17,
           color: Colors.black,
-        ),
       ),
     );
   }

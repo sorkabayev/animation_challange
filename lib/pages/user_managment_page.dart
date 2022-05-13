@@ -3,6 +3,8 @@ import 'package:animation_challange/pages/widgets/textField_management.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'widgets/button_widget.dart';
+
 class UserManagementPage extends StatefulWidget {
   const UserManagementPage({Key? key}) : super(key: key);
 
@@ -16,58 +18,71 @@ class _UserManagementPageState extends State<UserManagementPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+     // resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       appBar: AppBar(
-        // leading: IconButton(onPressed: (){},icon: Icon(CupertinoIcons.arrow_left,color: Colors.black,),),
         elevation: 0,
         backgroundColor: Colors.white,
         iconTheme: const IconThemeData(color: Colors.black),
       ),
-      body: ListView(
-        children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: const [
-              Icon(
-                CupertinoIcons.person_alt,
-                size: 25,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: const [
+                  Icon(
+                    CupertinoIcons.person_alt,
+                    size: 25,
+                  ),
+                  SizedBox(width: 20),
+                  Text(
+                    "User Management",
+                    style: TextStyle(color: Colors.black, fontSize: 20),
+                  ),
+                ],
               ),
-              Text(
-                "User Management",
-                style: TextStyle(color: Colors.black, fontSize: 20),
+              const SizedBox(height: 70),
+              Column(
+                children: [
+                  for( int i = 0; i< 3; i++)
+                    Column(
+                      children: [
+                        TextFieldManagement(
+                          trc: TextFieldLabels.labels[i],),
+                        SizedBox(
+                          height: 20,
+                        ),
+                      ],
+                    )
+                ],
               ),
+             // const Spacer(),
               SizedBox(
-                width: 80,
+                height: 370,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  button(
+                      color: Colors.white,
+                      text: "Clear",
+                      textColor: Colors.black),
+                  button(
+                      color: Color(0xff4F4E9A),
+                      text: "Done",
+                      textColor: Colors.white),
+                ],
               )
             ],
           ),
-          const SizedBox(
-            height: 70,
-          ),
-          ListView.separated(
-            shrinkWrap: true,
-              itemBuilder: (context, index) =>  TextFieldManagement(trc: TextFieldLabels.labels[index],),
-              separatorBuilder: (BuildContext context, int index) =>
-                  const SizedBox(height: 20),
-              itemCount: 3),
-          SizedBox(
-            height: 400,
-          ),
-          Align(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-
-              children: [
-                MaterialButton(onPressed: (){},child: Text("Clear"),),
-                MaterialButton(color: Color(0xff4F4E9A),onPressed: (){},child: Text("Clear",style: TextStyle(color: Colors.white),),),
-              ],
-            ),
-          )
-        ],
+        ),
       ),
     );
   }
-}
+// Clear and Done button
 
+}
 

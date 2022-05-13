@@ -10,15 +10,13 @@ class TextFieldManagement extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return   Padding(
-      padding:  EdgeInsets.only(left: 40,right: 40),
-      child: TextField(
-        decoration: InputDecoration(
-          label: Text(trc.text2!),
-          suffixIcon: IconButton(onPressed: (){
-            //do something
-          }, icon: const Icon(CupertinoIcons.pen))
-        ),
+    return   TextField(
+      obscureText: false,
+      decoration: InputDecoration(
+        label: Text(trc.text2!),
+        suffixIcon: IconButton(onPressed: (){
+          //do something
+        }, icon: const Icon(CupertinoIcons.pen))
       ),
     );
   }

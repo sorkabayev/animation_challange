@@ -5,7 +5,7 @@ import 'widgets/notification_container.dart';
 class NotificationPage extends StatefulWidget {
   const NotificationPage({Key? key}) : super(key: key);
 
-  static const String id = "billings_details";
+  static const String id = "notification_page";
 
   @override
   State<NotificationPage> createState() => _NotificationPageState();
@@ -52,7 +52,7 @@ class _NotificationPageState extends State<NotificationPage> {
           ListView.separated(
             shrinkWrap: true,
             itemBuilder: (context, index) => const NotificationContainer(),
-            separatorBuilder: (BuildContext context, int index) => SizedBox(),
+            separatorBuilder: (BuildContext context, int index) => const SizedBox(),
             itemCount: 6,
           ),
         ],

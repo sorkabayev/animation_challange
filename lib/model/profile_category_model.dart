@@ -10,8 +10,6 @@ class ProfileModel {
   Icon icon;
   String? id;
 
-
-
   ProfileModel({required this.text, required this.icon, this.id});
 
   static List<ProfileModel> elems = [
@@ -22,7 +20,7 @@ class ProfileModel {
         size: 25,
         color: Colors.black,
       ),
-      id:  UserManagementPage.id,
+      id: UserManagementPage.id,
     ),
     ProfileModel(
       text: "Billing details",
@@ -30,7 +28,8 @@ class ProfileModel {
         CupertinoIcons.creditcard,
         size: 25,
         color: Colors.black,
-      ), id: BillingDetails.id,
+      ),
+      id: BillingDetails.id,
     ),
     ProfileModel(
       text: "Settings",
@@ -38,7 +37,8 @@ class ProfileModel {
         CupertinoIcons.settings,
         size: 25,
         color: Colors.black,
-      ), id: SettingsPage.id,
+      ),
+      id: SettingsPage.id,
     ),
     ProfileModel(
       text: "Notifications",
@@ -46,7 +46,8 @@ class ProfileModel {
         CupertinoIcons.bell,
         size: 25,
         color: Colors.black,
-      ), id: NotificationPage.id,
+      ),
+      id: NotificationPage.id,
     ),
     ProfileModel(
       text: "Information",
@@ -54,7 +55,8 @@ class ProfileModel {
         CupertinoIcons.info,
         size: 25,
         color: Colors.black,
-      ), id: '',
+      ),
+      id: '',
     ),
     ProfileModel(
       text: "Information",
@@ -62,15 +64,17 @@ class ProfileModel {
         CupertinoIcons.arrow_right,
         size: 25,
         color: Colors.black,
-      ), id: '',
+      ),
+      id: '',
     )
   ];
 }
+
 //Managements TextFields
-class TextFieldLabels{
+class TextFieldLabels {
   String? text2;
 
-  TextFieldLabels({ this.text2});
+  TextFieldLabels({this.text2});
 
   static List<TextFieldLabels> labels = [
     TextFieldLabels(text2: 'Full name'),

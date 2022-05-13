@@ -20,7 +20,7 @@ class _BillingDetailsState extends State<BillingDetails> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: const IconThemeData(color: Colors.black),
         elevation: 0,
       ),
       body: ListView(
@@ -45,9 +45,7 @@ class _BillingDetailsState extends State<BillingDetails> {
               ),
             ],
           ),
-          SizedBox(
-            height: 39,
-          ),
+          SizedBox(height: 39),
           ListView.separated(
             shrinkWrap: true,
             itemBuilder: (context, index) => BillingsContainer(),
@@ -59,5 +57,3 @@ class _BillingDetailsState extends State<BillingDetails> {
     );
   }
 }
-
-
